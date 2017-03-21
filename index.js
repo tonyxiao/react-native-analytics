@@ -38,6 +38,14 @@ export default {
     },
 
     /*
+     * https://segment.com/docs/libraries/ios/#alias
+     * https://segment.com/docs/libraries/android/#alias
+     */
+    alias: function (userId: string) {
+        NativeRNSegmentIOAnalytics.alias(userId)
+    },
+
+    /*
      * https://segment.com/docs/libraries/ios/#track
      * https://segment.com/docs/libraries/android/#track
      */
