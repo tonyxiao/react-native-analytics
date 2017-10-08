@@ -43,6 +43,13 @@ RCT_EXPORT_METHOD(screen:(NSString*)screenName properties:(NSDictionary *)proper
 }
 
 /*
+ https://segment.com/docs/libraries/ios/#group
+ */
+RCT_EXPORT_METHOD(group:(NSString*)groupId traits:(NSDictionary *)traits) {
+  [[SEGAnalytics sharedAnalytics] group:groupId traits:traits];
+}
+
+/*
  https://segment.com/docs/libraries/ios/#flushing
  */
 RCT_EXPORT_METHOD(flush) {

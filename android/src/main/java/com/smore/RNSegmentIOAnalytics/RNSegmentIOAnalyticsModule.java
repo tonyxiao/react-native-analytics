@@ -87,6 +87,17 @@ public class RNSegmentIOAnalyticsModule extends ReactContextBaseJavaModule {
   }
 
   /*
+   https://segment.com/docs/libraries/android/#group
+   */
+  @ReactMethod
+  public void group(String groupId, ReadableMap traits) {
+    if (!mEnabled) {
+      return;
+    }
+    mAnalytics.group(groupId, toTraits(traits));
+  }
+
+  /*
    https://segment.com/docs/libraries/android/#flushing
    */
   @ReactMethod
@@ -144,13 +155,13 @@ public class RNSegmentIOAnalyticsModule extends ReactContextBaseJavaModule {
       ReadableType type = map.getType(key);
       switch (type){
         case Array:
-          props.putValue(key, map.getArray(key));
+          props.putValue(key, map.getArray(key).toArrayList());
           break;
         case Boolean:
           props.putValue(key, map.getBoolean(key));
           break;
         case Map:
-          props.putValue(key, map.getMap(key));
+          props.putValue(key, map.getMap(key).toHashMap());
           break;
         case Null:
           props.putValue(key, null);
@@ -181,13 +192,13 @@ public class RNSegmentIOAnalyticsModule extends ReactContextBaseJavaModule {
       ReadableType type = map.getType(key);
       switch (type){
         case Array:
-          traits.putValue(key, map.getArray(key));
+          traits.putValue(key, map.getArray(key).toArrayList());
           break;
         case Boolean:
           traits.putValue(key, map.getBoolean(key));
           break;
         case Map:
-          traits.putValue(key, map.getMap(key));
+          traits.putValue(key, map.getMap(key).toHashMap());
           break;
         case Null:
           traits.putValue(key, null);
