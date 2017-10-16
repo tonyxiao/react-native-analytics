@@ -6,8 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <RCTConvert.h>
-#import <SEGAnalytics.h>
+#import <React/RCTConvert.h>
+#import "SEGAnalytics.h"
 #import "RNSegmentIOAnalytics.h"
 
 @implementation RNSegmentIOAnalytics
