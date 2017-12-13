@@ -62,6 +62,14 @@ export default {
     },
 
     /*
+     * https://segment.com/docs/libraries/ios/#group
+     * https://segment.com/docs/libraries/android/#group
+     */
+    group: function (groupId: string, traits: ?Object) {
+        NativeRNSegmentIOAnalytics.group(groupId, traits || {})
+    },
+
+    /*
      * https://segment.com/docs/libraries/ios/#reset
      * https://segment.com/docs/libraries/android/#how-do-you-handle-unique-identifiers-
      */
