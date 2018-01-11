@@ -25,8 +25,8 @@ export default {
      * @param flushAt https://segment.com/docs/libraries/ios/#flushing or https://segment.com/docs/libraries/android/#customizing-the-client
      * @param shouldUseLocationServices https://segment.com/docs/libraries/ios/#location-services
      */
-    setup: function (configKey: string, flushAt: number = 20, shouldUseLocationServices: bool = false) {
-        NativeRNSegmentIOAnalytics.setup(configKey, flushAt, shouldUseLocationServices)
+    setup: function (configKey: string, flushAt: number = 20, shouldUseLocationServices: bool = false, options: ?Object = {}) {
+        NativeRNSegmentIOAnalytics.setup(configKey, flushAt, shouldUseLocationServices, options)
     },
 
     /*
